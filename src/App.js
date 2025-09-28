@@ -29,14 +29,19 @@ function App() {
       <Router>
         <AppBar position="static">
           <Toolbar>
-            <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
+            <Typography
+              variant="h6"
+              color="inherit"
+              component="div"
+              sx={{ flexGrow: 1 }}
+            >
               Student Alert System
             </Typography>
-            <Button color="inherit" component={Link} to="/dashboard">
-              Dashboard
-            </Button>
             <Button color="inherit" component={Link} to="/add-course">
               Add Course
+            </Button>
+            <Button color="inherit" component={Link} to="/dashboard">
+              Dashboard
             </Button>
             <Button color="inherit" component={Link} to="/student-data">
               Student View

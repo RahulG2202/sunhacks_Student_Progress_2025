@@ -140,7 +140,21 @@ const Dashboard = () => {
               students.map((student) => (
                 <TableRow
                   key={student.id}
-                  sx={{ "&:last-child td, &:last-child th": { border: 0 } }}
+                  hover
+                  tabIndex={0}
+                  role="button"
+                  onClick={() =>
+                    window.open(
+                      `/student/${student.id}`,
+                      "_blank",
+                      "noopener,noreferrer"
+                    )
+                  }
+                  sx={{
+                    cursor: "pointer",
+                    "&:hover": { backgroundColor: "action.hover" },
+                    "&:last-child td, &:last-child th": { border: 0 },
+                  }}
                 >
                   <TableCell component="th" scope="row">
                     {student.studentName}
