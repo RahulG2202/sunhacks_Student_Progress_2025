@@ -15,7 +15,6 @@ import Typography from "@mui/material/Typography";
 import Button from "@mui/material/Button";
 import Box from "@mui/material/Box";
 
-// Import the page components
 import Dashboard from "./pages/Dashboard";
 import AddCourse from "./pages/AddCourse";
 import StudentData from "./pages/StudentData";
@@ -28,13 +27,11 @@ function App() {
       <CssBaseline />
 
       <Router>
-        {/* Navigation Bar */}
         <AppBar position="static">
           <Toolbar>
             <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
               Student Alert System
             </Typography>
-            {/* Using React Router's Link component with MUI's Button component */}
             <Button color="inherit" component={Link} to="/dashboard">
               Dashboard
             </Button>
@@ -47,19 +44,11 @@ function App() {
           </Toolbar>
         </AppBar>
 
-        {/* Main Content Area */}
         <Box component="main" sx={{ p: 3 }}>
           <Routes>
-            {/* Route for the Dashboard page */}
             <Route path="/dashboard" element={<Dashboard />} />
-
-            {/* Route for the Add Course page */}
             <Route path="/add-course" element={<AddCourse />} />
-
-            {/* Route for the Student Data page */}
             <Route path="/student-data" element={<StudentData />} />
-
-            {/* Default route: Redirects to the dashboard if the path is just "/" */}
             <Route path="/" element={<Navigate to="/dashboard" />} />
           </Routes>
         </Box>

@@ -60,15 +60,19 @@ const AddCourse = () => {
 
     const formData = new FormData();
     formData.append("professorName", professorName);
-    formData.append("courseName", courseName);
+    formData.append("courseName", "S001");
     formData.append("file", selectedFile);
 
     try {
-      const response = await axios.post("/api/upload-course-data", formData, {
-        headers: {
-          "Content-Type": "multipart/form-data",
-        },
-      });
+      const response = await axios.post(
+        "http://localhost:8000/api/upload-course-data",
+        formData,
+        {
+          headers: {
+            "Content-Type": "multipart/form-data",
+          },
+        }
+      );
 
       setSuccess("Data submitted successfully! Redirecting to dashboard...");
       console.log("API Response:", response.data);
