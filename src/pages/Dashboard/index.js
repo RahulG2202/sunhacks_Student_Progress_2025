@@ -145,7 +145,7 @@ const Dashboard = () => {
                   role="button"
                   onClick={() =>
                     window.open(
-                      `/student/${student.id}`,
+                      `/student-data`,
                       "_blank",
                       "noopener,noreferrer"
                     )
